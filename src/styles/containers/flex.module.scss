@@ -1,0 +1,50 @@
+/*The element behaves like a block and lays out its content using the flexbox model.*/
+.flex { display: flex; }
+/*The element behaves like an inline element and lays out its content using the flexbox model.*/
+.inline_flex { display: inline-flex; }
+
+.flex_row            { flex-direction: row; }
+.flex_row_reverse    { flex-direction: row-reverse; }
+.flex_column         { flex-direction: column; }
+.flex_column_reverse { flex-direction: column-reverse; }
+
+/*Use these classes to distribute space between and around flex items along the main axis of the container.*/
+.flex_justify_start    { justify-content: flex-start; }
+.flex_justify_end      { justify-content: flex-end; }
+.flex_justify_center   { justify-content: center; }
+.flex_justify_between  { justify-content: space-between; }
+.flex_justify_around   { justify-content: space-around; }
+
+/*Use these classes to align items on the cross axis.*/
+.flex_items_start      { align-items: flex-start; }
+.flex_items_end        { align-items: flex-end; }
+.flex_items_center     { align-items: center; }
+.flex_items_baseline   { align-items: baseline; }
+.flex_items_stretch    { align-items: stretch; }
+
+/*When the main axis wraps, this creates multiple main axis lines and adds extra space in the cross axis. Use these classes to align the lines of the main axis on the cross axis.*/
+.flex_content_start    { align-content: flex-start; }
+.flex_content_end      { align-content: flex-end; }
+.flex_content_center   { align-content: center; }
+.flex_content_between  { align-content: space-between; }
+.flex_content_around   { align-content: space-around; }
+.flex_content_stretch  { align-content: stretch; }
+
+.flex_1        { flex: 1; }
+.flex_auto     { flex: auto; }
+.flex_grow_0   { flex-grow: 0; }
+.flex_shrink_0 { flex-shrink: 0; }
+
+.flex_self_auto        { align-self: auto; }
+.flex_self_start       { align-self: flex-start; }
+.flex_self_end         { align-self: flex-end; }
+.flex_self_center      { align-self: center; }
+.flex_self_baseline    { align-self: baseline; }
+.flex_self_stretch     { align-self: stretch; }
+
+.flex_order_1    { order: 1; }
+.flex_order_2    { order: 2; }
+.flex_order_none { order: inherit; }
+
+
+

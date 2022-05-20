@@ -1,0 +1,85 @@
+// @import '~styles/mixins/breakpoints';
+@import '../../styles/mixins/breakpoints';
+@import '../../styles/elements/button';
+
+
+$header-height: 6rem;
+$bg-color: rgb(135, 153, 174);
+$button-bg-color: rgb(87, 105, 127);
+$button-color: rgb(238, 243, 248);
+
+.button {
+  @include default-button();
+  background-color: $button-bg-color;
+  color: $button-color;
+  border-radius: 10px 10px 0 0; /* top-left top-right bottom-right bottom-left.*/
+  border-color: none;
+  padding: 0.25em 0.75em;
+  margin: 0 0.5rem;
+  width: 20rem;
+  &[data-wide-button]{
+    min-width: 20vw;
+  }
+  min-height: 44px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  line-height: 1.1;
+  &:hover, &:active, &:focus {
+    background-color: scale-color($button-bg-color, $lightness: -20%);
+    transition: 220ms all ease-in-out;
+  }
+  &:active {
+    background-color: $button-bg-color;
+  }
+
+
+}
+
+
+
+.flex_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  background-color: $bg-color;
+  width: 100%;
+  height: $header-height;
+  padding: 0rem 8rem 0rem 8rem;
+
+  /*Desktop Layout*/
+  @include respond-above(lg){
+
+  }
+
+  /*Tablet Layout*/
+  @include respond-between(sm, lg){
+  }
+
+
+  /*Mobile Layout*/
+  @include respond-below(sm){
+  }
+
+}
+
+.flex_item {
+  flex-grow: 0;
+  flex-shrink: 1;
+  // align-self: baseline;
+  &[data-align-end=true]{
+      align-self: flex-end;
+  }
+  &[data-align-middle=true]{
+    align-self: center;
+  }
+}
+
+
+.spacer {
+  flex-grow: 3;
+  height: 100%;
+  width: 100%;
+}

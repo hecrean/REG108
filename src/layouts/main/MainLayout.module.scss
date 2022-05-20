@@ -1,0 +1,11 @@
+$bg-color: rgb(132, 136, 142);
+
+.vertical_flex_container {
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

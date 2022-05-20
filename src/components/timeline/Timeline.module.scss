@@ -1,0 +1,86 @@
+$line: whitesmoke !default;
+$background: transparent !default;
+$primary: orange !default;
+
+// $line: var(--line);
+// $background: var(--background);
+// $primary: var(--primary);
+
+.dl {
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+  .cell {
+    grid-column: span 2;
+    display: flex;
+    padding: 0 1rem;
+    &:nth-child(2) {
+      grid-column: span 3;
+      justify-content: flex-end;
+    }
+    .cell_content {
+      display: inline-flex;
+      flex-direction: column;
+      border-left: 1px dashed $line;
+      position: relative;
+      background: $background;
+      &::after {
+        content: '';
+        display: block;
+        background: $line;
+        height: .5rem;
+        width: .5rem;
+        position: absolute;
+        left: -.25rem;
+        border-radius: 50%;
+      }
+      dt {
+        background: $background;
+        color: $primary;
+        padding-bottom: .25em;
+        position: relative;
+        left: -.25rem;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      dd {
+        background: $background;
+        margin: 0;
+        position: relative;
+        left: -.25rem;
+        color: #f4f4f6;
+      }
+    }
+    &:nth-child(odd) .cell_content {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $line;
+      &::after {
+         bottom: -.25rem;
+      }
+      dd:last-child {
+        padding-bottom: .5rem;
+      }
+    }
+    &:nth-child(even) .cell_content {
+      padding-top: 1rem;
+      position: relative;
+      top: -1px;
+      border-top: 1px solid $line;
+      &::after {
+        top: -.25rem;
+      }
+      dt {
+        padding-top: .5rem;
+      }
+      dd {
+        flex-grow: 1;
+      }
+    }
+    &:last-child .cell_content {
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+  }
+}
